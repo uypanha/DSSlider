@@ -299,7 +299,7 @@ public class DSSlider: UIView {
     updateThumbnail(withPosition: position == .left ? xStartPoint : xEndingPoint, andAnimation: animated)
     updateTextLabels(withPosition: position == .left ? 0 : xEndingPoint)
     var angle: CGFloat = 0
-    if position == .right {
+    if position == .rigth {
       let ratio = xEndingPoint / CGFloat.pi 
       angle = xEndingPoint / ratio
     }
