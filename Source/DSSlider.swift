@@ -294,6 +294,13 @@ public class DSSlider: UIView {
     sliderPosition = .left
     layoutIfNeeded()
   }
+  
+  public func setSliderPosition(_ position: DSSliderPosition, animated: Bool = true) {
+    updateThumbnail(withPosition: position == .left ? xStartPoint : xEndingPoint, andAnimation: animated)
+    updateTextLabels(withPosition: position == .left ? 0 : xEndingPoint)
+    sliderPosition = position
+    layoutIfNeeded()
+  }
 
   public static func dsSliderRedColor() -> UIColor {
     return UIColor.dsSliderRedColor
