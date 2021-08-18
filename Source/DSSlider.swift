@@ -298,6 +298,12 @@ public class DSSlider: UIView {
   public func setSliderPosition(_ position: DSSliderPosition, animated: Bool = true) {
     updateThumbnail(withPosition: position == .left ? xStartPoint : xEndingPoint, andAnimation: animated)
     updateTextLabels(withPosition: position == .left ? 0 : xEndingPoint)
+    var angle: CGFloat = 0
+    if position == .right {
+      let ratio = xEndingPoint / CGFloat.pi 
+      angle = xEndingPoint / ratio
+    }
+    updateImageView(withAngle: angle)
     sliderPosition = position
     layoutIfNeeded()
   }
